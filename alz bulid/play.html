@@ -42,12 +42,15 @@
       </nav>
     </header>
 
-
+    <!-- Simon Says Script -->
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/alz bulid.json", {onProgress: UnityProgress});
     </script>
+
+    <!-- Memory Match Script -->
+    <script src="//unpkg.com/mini-memory@latest/public/mini-memory.min.js"></script>
 
 
   <div class="row featurette">
@@ -58,6 +61,8 @@
     
   </div>
 
+  <h2 class = "play-featurette-heading">Simon Says: </h2> 
+
   <div class="webgl-content">
     <div id="unityContainer"></div>
     <div class="game-footer">
@@ -66,6 +71,11 @@
       <div class="title">Alzeihmer pattern recognition</div>
     </div>
   </div>
+
+
+  <h2 class = "play-featurette-heading">Simon Says: </h2> 
+  <div class="memory-match"><mini-memory matrix="2x2"></mini-memory></div>
+
 
   <!-- FOOTER -->
   <footer class="container">
