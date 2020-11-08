@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://127.0.0.1:5500/pre-check.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://127.0.0.1:5500/logo.png">
+
+    <title>Alz-Check Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./Alz-Check Home_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./Alz-Check Home_files/main.css" rel="stylesheet">
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.983.0" class="vsc-initialized">
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html">Alz-Check</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="http://127.0.0.1:5500/index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/pre-check.html">Pre-check </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5500/map.html">Map </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/alz%20bulid/training.html">Training </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <script>
+        function handleClick() {         
+            var amountCorrect = 0;          
+            for(var i = 1; i <= 15; i++) {
+                var radios = document.getElementsByName('ans'+i);
+                for(var j = 0; j < radios.length; j++) {
+                    var radio = radios[j];
+                    if(radio.value == "0" && radio.checked) {
+                        amountCorrect++;
+                    } else if(radio.value == "0.5" && radio.checked) {
+                        amountCorrect += 0.5;
+                    }
+                }
+          }
+          alert("Your Score: " + amountCorrect);
+        }        
+    </script>
+   
+   
+
+    <main role="main">
+        <!-- Quiz -->
+        <div class="quiz-container"> 
+            <h2 class="featurette-heading"> Looking for a better lifestyle? <br></h2><h4>Answer these questions and get some advice! </h4>
+            <form id="form">
+                <br><p>1. From time to time, I forget what day of the week it is. </p>
+                    <input type="radio" name="ans1" value="0"> Yes <br>
+                    <input type="radio" name="ans1" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans1" value="1"> No <br>
+                <br><p>2. Sometimes when I’m looking for something, I forget what it is that I’m looking for.</p>
+                    <input type="radio" name="ans2" value="0"> Yes <br>
+                    <input type="radio" name="ans2" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans2" value="1"> No <br>
+                <br><p>3. My friends and family seem to think I’m more forgetful now than I used to be.</p>
+                    <input type="radio" name="ans3" value="0"> Yes <br>
+                    <input type="radio" name="ans3" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans3" value="1"> No <br>
+                <br><p>4. Sometimes I forget the names of my friends.</p>
+                    <input type="radio" name="ans4" value="0"> Yes <br>
+                    <input type="radio" name="ans4" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans4" value="1"> No <br>
+                <br><p>5. It’s hard for me to add two-digit numbers without writing them down.</p>
+                    <input type="radio" name="ans5" value="0"> Yes <br>
+                    <input type="radio" name="ans5" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans5" value="1"> No <br>
+                <br><p>6. I frequently miss appointments because I forget them.</p>
+                    <input type="radio" name="ans6" value="0"> Yes <br>
+                    <input type="radio" name="ans6" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans6" value="1"> No <br>
+                <br><p>7. I rarely feel energetic.</p>
+                    <input type="radio" name="ans7" value="0"> Yes <br>
+                    <input type="radio" name="ans7" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans7" value="1"> No <br>
+                <br><p>8. Small problems upset me more than they once did.</p>
+                    <input type="radio" name="ans8" value="0"> Yes <br>
+                    <input type="radio" name="ans8" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans8" value="1"> No <br>
+                <br><p>9. It’s hard for me to concentrate for even an hour.</p>
+                    <input type="radio" name="ans9" value="0"> Yes <br>
+                    <input type="radio" name="ans9" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans9" value="1"> No <br>
+                <br><p>10. I often misplace my keys, and when I find them, I often can’t remember putting them there.</p>
+                    <input type="radio" name="ans10" value="0"> Yes <br>
+                    <input type="radio" name="ans10" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans10" value="1"> No <br>
+                <br><p>11. I frequently repeat myself.</p>
+                    <input type="radio" name="ans11" value="0"> Yes <br>
+                    <input type="radio" name="ans11" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans11" value="1"> No <br>
+                <br><p>12.Sometime I get lost, even when I’m driving somewhere I’ve been before.</p>
+                    <input type="radio" name="ans12" value="0"> Yes <br>
+                    <input type="radio" name="ans12" value="0.5"> Sometimes<br>
+                    <input type="radio" name="ans12" value="1"> No <br>
+                <br><p>13. Sometimes I forget the point I’m trying to make.</p>
+                    <input type="radio" name="ans13" value="0"> Yes <br>
+                    <input type="radio" name="ans13" value="0.5"> Sometimes<br>
+                    <input type="radio" name="ans13" value="1"> No <br>
+                <br><p>14. To feel mentally sharp, I depend upon caffeine.</p>
+                    <input type="radio" name="ans14" value="0"> Yes<br>
+                    <input type="radio" name="ans14" value="0.5"> Sometimes <br>
+                    <input type="radio" name="ans14" value="1"> No <br>
+                <br><p>15. It takes longer for me to learn things than it used to.</p>
+                    <input type="radio" name="ans15" value="0"> Yes<br>
+                    <input type="radio" name="ans15" value="0.5"> Sometimes<br>
+                    <input type="radio" name="ans15" value="1"> No <br>
+            </form>
+            <br>
+
+            <div id="answer"></div>
+            <button class="submit" onclick="return handleClick();" type="submit">Calculate Results</button>
+        </div>
+
+        <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="map-featurette-heading">Analyze Your Results <span class="text-muted"></span></h2>
+              <p class="map-lead">5-8 – Your brain is functioning okay. By learning to relax and maintain a healthy diet, your brain can function at even higher levels
+                <br><br>9-12 – Your brain is in danger. Check your diet today. You can reduce brain drain and memory loss with vitamins, brain foods, herbs, yoga and meditation techniques, and appropriate medications.
+                <br><br>12-15 – There is a high possibility you suffer from Alzheimer’s. You should see your doctor. You can refuel your brain and prevent further memory loss with food, vitamins, herbs, exercises, and medications.
+                </p>
+                
+            </div>
+            
+          </div>
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="http://127.0.0.1:5500/pre-check.html#">Back to top</a></p>
+        <p>© 2020 Alz-Check · </p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Alz-Check Home_files/jquery-3.5.1.slim.min.js.download" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="./Alz-Check Home_files/bootstrap.bundle.min.js.download" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
