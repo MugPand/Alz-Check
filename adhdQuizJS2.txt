@@ -1,0 +1,190 @@
+<template>
+  <div class="about">
+  <div class="row">
+    <div id="pic" class="col-md-6">
+    </div>
+    <div class="col-md-6">
+        <div class="media-body">
+      <h1 id="yeah">ADHD Test</h1>
+      <p>This is a quiz that will assess whether or not you suffer from symptoms of Alzheimer's. Based on your results, you will be directed to potential resources. Please complete the following questions. Good Luck
+</p>
+        <main id="quiz">
+            <div class="quiz-container"> <h1 class="abt-sm-heading"> Looking for a better lifestyle? Answer these questions and get some advice.</h1>
+              <form id="kdk">
+                  <p>1. From time to time, I forget what day of the week it is. </p>
+                      <input type="radio" name="ans1" value="0"> Yes <br>
+                      <input type="radio" name="ans1" value="1"> No <br>
+                  <p>2. Sometimes when I’m looking for something, I forget what it is that I’m looking for.</p>
+                      <input type="radio" name="ans2" value="0"> Yes <br>
+                      <input type="radio" name="ans2" value="1"> No <br>
+                  <p>3. My friends and family seem to think I’m more forgetful now than I used to be.</p>
+                      <input type="radio" name="ans3" value="0"> Yes <br>
+                      <input type="radio" name="ans3" value="1"> No <br>
+                  <p>4. Sometimes I forget the names of my friends.</p>
+                      <input type="radio" name="ans4" value="0"> Yes <br>
+                      <input type="radio" name="ans4" value="1"> No <br>
+                  <p>5. It’s hard for me to add two-digit numbers without writing them down.</p>
+                      <input type="radio" name="ans5" value="0"> Yes <br>
+                      <input type="radio" name="ans5" value="1"> No <br>
+                  <p>6. I frequently miss appointments because I forget them.</p>
+                      <input type="radio" name="ans6" value="0"> Yes <br>
+                      <input type="radio" name="ans6" value="1"> No <br>
+                  <p>7. I rarely feel energetic.</p>
+                      <input type="radio" name="ans7" value="0"> Yes <br>
+                      <input type="radio" name="ans7" value="1"> No <br>
+                  <p>8. Small problems upset me more than they once did.</p>
+                      <input type="radio" name="ans8" value="0"> Yes <br>
+                      <input type="radio" name="ans8" value="1"> No <br>
+                  <p>9. It’s hard for me to concentrate for even an hour.</p>
+                      <input type="radio" name="ans9" value="0"> Yes <br>
+                      <input type="radio" name="ans9" value="1"> No <br>
+                  <p>10. I often misplace my keys, and when I find them, I often can’t remember putting them there.</p>
+                      <input type="radio" name="ans10" value="0"> Yes <br>
+                      <input type="radio" name="ans10" value="1"> No <br>
+                  <p>11. I frequently repeat myself.</p>
+                      <input type="radio" name="ans11" value="0"> Yes <br>
+                      <input type="radio" name="ans11" value="1"> No <br>
+                  <p>12.Sometime I get lost, even when I’m driving somewhere I’ve been before.</p>
+                      <input type="radio" name="ans12" value="0"> Yes <br>
+                      <input type="radio" name="ans12" value="1"> No <br>
+                  <p>13. Sometimes I forget the point I’m trying to make.</p>
+                      <input type="radio" name="ans13" value="0"> Yes <br>
+                      <input type="radio" name="ans13" value="1"> No <br>
+                  <p>14. To feel mentally sharp, I depend upon caffeine.</p>
+                      <input type="radio" name="ans14" value="0"> Yes <br>
+                      <input type="radio" name="ans14" value="1"> No <br>
+                  <p>15. It takes longer for me to learn things than it used to.</p>
+                      <input type="radio" name="ans15" value="0"> Yes <br>
+                      <input type="radio" name="ans15" value="1"> No <br>
+              </form>
+              <br>
+
+              <div id="answer"></div>
+              <button class="relative-button" v-on:click="quizAnswer()">Calculate Results</button>
+          </div>
+
+
+
+         
+      </main>
+    </div>
+  </div>
+
+<div class="footer-copyright text-center py-3"><p id="footer_text">© ADHD Inc. 2019 Copyright
+</p></div>
+</div>
+  </div>
+</template>
+
+<script>
+import { all } from 'async';
+export default {
+  name: 'home',
+  components: {
+  },
+  methods: {
+    quizAnswer(){
+      // Warn if overriding existing method
+if(Array.prototype.equals)
+    console.warn("Overriding existing Array.prototype.equals. Possible causes: New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
+// attach the .equals method to Array's prototype to call it on any array
+Array.prototype.equals = function (array) {
+    // if the other array is a falsy value, return
+    if (!array)
+        return false;
+    // compare lengths - can save a lot of time 
+    if (this.length != array.length)
+        return false;
+    for (var i = 0, l=this.length; i < l; i++) {
+        // Check if we have nested arrays
+        if (this[i] instanceof Array && array[i] instanceof Array) {
+            // recurse into the nested arrays
+            if (!this[i].equals(array[i]))
+                return false;       
+        }           
+        else if (this[i] != array[i]) { 
+            // Warning - two different object instances will never be equal: {x:20} != {x:20}
+            return false;   
+        }           
+    }       
+    return true;
+}
+// Hide method from for-in loops
+Object.defineProperty(Array.prototype, "equals", {enumerable: false});
+function generateAnswer() {
+  //  var allelements = [];
+    var allelements = document.getElementsByTagName('input');
+    var answer = "";
+    for (var i=0; i<allelements.length; i++) { allelements[i] = parseInt(allelements[i], 10); }
+    var total = 0;
+    for (var i=0; i<allelements.length; i++) { total += allelements[i];}
+    console.log(total);
+    document.getElementById("answer").innerHTML = answer;
+}
+generateAnswer();
+    }
+  }
+};
+</script>
+
+<style lang="scss">
+html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+.logo {
+  width: 50%;
+}
+#pic {
+  height: 80vh;
+  background-image: linear-gradient(rgba(243, 104, 224,0.5), rgba(253, 121, 168,0.5)), url("https://static.psycom.net/wp-content/uploads/2016/12/kids-and-adhd-58545454_M.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding:0;
+  margin: 0;
+}
+.boxy {
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0);
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.45em 0.95em;
+    margin: 0.45em;
+    border-style: solid;
+    border-width: 1px;
+    transition: all 0.2s ease;
+    border-image: linear-gradient(155deg, #fd79a8 0%, #fd79a8 100%) 1 round;
+    background: linear-gradient(155deg, #fd79a8 0%, #fd79a8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    border-width: 2px;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    &:hover {
+      text-decoration: none;
+      color: #fd79a8;
+    }
+}
+.media-body {
+  position: relative;
+  right: 2%;
+}
+#yeah {
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+#footer_text {
+  text-align: center;
+  justify-content: center;
+}
+</style>
